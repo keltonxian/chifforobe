@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5891FF91D2156C20016EDE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5891FF81D2156C20016EDE8 /* AppDelegate.swift */; };
+		D5891FFB1D2156C20016EDE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5891FFA1D2156C20016EDE8 /* ViewController.swift */; };
+		D5891FFE1D2156C20016EDE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5891FFC1D2156C20016EDE8 /* Main.storyboard */; };
+		D58920011D2156C20016EDE8 /* Chifforobe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5891FFF1D2156C20016EDE8 /* Chifforobe.xcdatamodeld */; };
+		D58920031D2156C20016EDE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58920021D2156C20016EDE8 /* Assets.xcassets */; };
+		D58920061D2156C20016EDE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58920041D2156C20016EDE8 /* LaunchScreen.storyboard */; };
+		D58920111D2156C30016EDE8 /* ChifforobeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58920101D2156C30016EDE8 /* ChifforobeTests.swift */; };
+		D589201C1D2156C30016EDE8 /* ChifforobeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589201B1D2156C30016EDE8 /* ChifforobeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D589200D1D2156C30016EDE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5891FED1D2156C20016EDE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5891FF41D2156C20016EDE8;
+			remoteInfo = Chifforobe;
+		};
+		D58920181D2156C30016EDE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5891FED1D2156C20016EDE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5891FF41D2156C20016EDE8;
+			remoteInfo = Chifforobe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5891FF51D2156C20016EDE8 /* Chifforobe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chifforobe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5891FF81D2156C20016EDE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D5891FFA1D2156C20016EDE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D5891FFD1D2156C20016EDE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D58920001D2156C20016EDE8 /* Chifforobe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chifforobe.xcdatamodel; sourceTree = "<group>"; };
+		D58920021D2156C20016EDE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D58920051D2156C20016EDE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D58920071D2156C20016EDE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D589200C1D2156C30016EDE8 /* ChifforobeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChifforobeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D58920101D2156C30016EDE8 /* ChifforobeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChifforobeTests.swift; sourceTree = "<group>"; };
+		D58920121D2156C30016EDE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D58920171D2156C30016EDE8 /* ChifforobeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChifforobeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D589201B1D2156C30016EDE8 /* ChifforobeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChifforobeUITests.swift; sourceTree = "<group>"; };
+		D589201D1D2156C30016EDE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5891FF21D2156C20016EDE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58920091D2156C30016EDE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58920141D2156C30016EDE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5891FEC1D2156C20016EDE8 = {
+			isa = PBXGroup;
+			children = (
+				D5891FF71D2156C20016EDE8 /* Chifforobe */,
+				D589200F1D2156C30016EDE8 /* ChifforobeTests */,
+				D589201A1D2156C30016EDE8 /* ChifforobeUITests */,
+				D5891FF61D2156C20016EDE8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5891FF61D2156C20016EDE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5891FF51D2156C20016EDE8 /* Chifforobe.app */,
+				D589200C1D2156C30016EDE8 /* ChifforobeTests.xctest */,
+				D58920171D2156C30016EDE8 /* ChifforobeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5891FF71D2156C20016EDE8 /* Chifforobe */ = {
+			isa = PBXGroup;
+			children = (
+				D5891FF81D2156C20016EDE8 /* AppDelegate.swift */,
+				D5891FFA1D2156C20016EDE8 /* ViewController.swift */,
+				D5891FFC1D2156C20016EDE8 /* Main.storyboard */,
+				D58920021D2156C20016EDE8 /* Assets.xcassets */,
+				D58920041D2156C20016EDE8 /* LaunchScreen.storyboard */,
+				D58920071D2156C20016EDE8 /* Info.plist */,
+				D5891FFF1D2156C20016EDE8 /* Chifforobe.xcdatamodeld */,
+			);
+			path = Chifforobe;
+			sourceTree = "<group>";
+		};
+		D589200F1D2156C30016EDE8 /* ChifforobeTests */ = {
+			isa = PBXGroup;
+			children = (
+				D58920101D2156C30016EDE8 /* ChifforobeTests.swift */,
+				D58920121D2156C30016EDE8 /* Info.plist */,
+			);
+			path = ChifforobeTests;
+			sourceTree = "<group>";
+		};
+		D589201A1D2156C30016EDE8 /* ChifforobeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D589201B1D2156C30016EDE8 /* ChifforobeUITests.swift */,
+				D589201D1D2156C30016EDE8 /* Info.plist */,
+			);
+			path = ChifforobeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5891FF41D2156C20016EDE8 /* Chifforobe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D58920201D2156C30016EDE8 /* Build configuration list for PBXNativeTarget "Chifforobe" */;
+			buildPhases = (
+				D5891FF11D2156C20016EDE8 /* Sources */,
+				D5891FF21D2156C20016EDE8 /* Frameworks */,
+				D5891FF31D2156C20016EDE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Chifforobe;
+			productName = Chifforobe;
+			productReference = D5891FF51D2156C20016EDE8 /* Chifforobe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D589200B1D2156C30016EDE8 /* ChifforobeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D58920231D2156C30016EDE8 /* Build configuration list for PBXNativeTarget "ChifforobeTests" */;
+			buildPhases = (
+				D58920081D2156C30016EDE8 /* Sources */,
+				D58920091D2156C30016EDE8 /* Frameworks */,
+				D589200A1D2156C30016EDE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D589200E1D2156C30016EDE8 /* PBXTargetDependency */,
+			);
+			name = ChifforobeTests;
+			productName = ChifforobeTests;
+			productReference = D589200C1D2156C30016EDE8 /* ChifforobeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D58920161D2156C30016EDE8 /* ChifforobeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D58920261D2156C30016EDE8 /* Build configuration list for PBXNativeTarget "ChifforobeUITests" */;
+			buildPhases = (
+				D58920131D2156C30016EDE8 /* Sources */,
+				D58920141D2156C30016EDE8 /* Frameworks */,
+				D58920151D2156C30016EDE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D58920191D2156C30016EDE8 /* PBXTargetDependency */,
+			);
+			name = ChifforobeUITests;
+			productName = ChifforobeUITests;
+			productReference = D58920171D2156C30016EDE8 /* ChifforobeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5891FED1D2156C20016EDE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = xiankelton;
+				TargetAttributes = {
+					D5891FF41D2156C20016EDE8 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					D589200B1D2156C30016EDE8 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D5891FF41D2156C20016EDE8;
+					};
+					D58920161D2156C30016EDE8 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D5891FF41D2156C20016EDE8;
+					};
+				};
+			};
+			buildConfigurationList = D5891FF01D2156C20016EDE8 /* Build configuration list for PBXProject "Chifforobe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5891FEC1D2156C20016EDE8;
+			productRefGroup = D5891FF61D2156C20016EDE8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5891FF41D2156C20016EDE8 /* Chifforobe */,
+				D589200B1D2156C30016EDE8 /* ChifforobeTests */,
+				D58920161D2156C30016EDE8 /* ChifforobeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5891FF31D2156C20016EDE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D58920061D2156C20016EDE8 /* LaunchScreen.storyboard in Resources */,
+				D58920031D2156C20016EDE8 /* Assets.xcassets in Resources */,
+				D5891FFE1D2156C20016EDE8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D589200A1D2156C30016EDE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58920151D2156C30016EDE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5891FF11D2156C20016EDE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5891FFB1D2156C20016EDE8 /* ViewController.swift in Sources */,
+				D5891FF91D2156C20016EDE8 /* AppDelegate.swift in Sources */,
+				D58920011D2156C20016EDE8 /* Chifforobe.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58920081D2156C30016EDE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D58920111D2156C30016EDE8 /* ChifforobeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58920131D2156C30016EDE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D589201C1D2156C30016EDE8 /* ChifforobeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D589200E1D2156C30016EDE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5891FF41D2156C20016EDE8 /* Chifforobe */;
+			targetProxy = D589200D1D2156C30016EDE8 /* PBXContainerItemProxy */;
+		};
+		D58920191D2156C30016EDE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5891FF41D2156C20016EDE8 /* Chifforobe */;
+			targetProxy = D58920181D2156C30016EDE8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D5891FFC1D2156C20016EDE8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5891FFD1D2156C20016EDE8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D58920041D2156C20016EDE8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D58920051D2156C20016EDE8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D589201E1D2156C30016EDE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D589201F1D2156C30016EDE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D58920211D2156C30016EDE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Chifforobe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kwork.Chifforobe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D58920221D2156C30016EDE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Chifforobe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kwork.Chifforobe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D58920241D2156C30016EDE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ChifforobeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kwork.ChifforobeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chifforobe.app/Chifforobe";
+			};
+			name = Debug;
+		};
+		D58920251D2156C30016EDE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ChifforobeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kwork.ChifforobeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chifforobe.app/Chifforobe";
+			};
+			name = Release;
+		};
+		D58920271D2156C30016EDE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ChifforobeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kwork.ChifforobeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Chifforobe;
+			};
+			name = Debug;
+		};
+		D58920281D2156C30016EDE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ChifforobeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kwork.ChifforobeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Chifforobe;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5891FF01D2156C20016EDE8 /* Build configuration list for PBXProject "Chifforobe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D589201E1D2156C30016EDE8 /* Debug */,
+				D589201F1D2156C30016EDE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D58920201D2156C30016EDE8 /* Build configuration list for PBXNativeTarget "Chifforobe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D58920211D2156C30016EDE8 /* Debug */,
+				D58920221D2156C30016EDE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D58920231D2156C30016EDE8 /* Build configuration list for PBXNativeTarget "ChifforobeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D58920241D2156C30016EDE8 /* Debug */,
+				D58920251D2156C30016EDE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D58920261D2156C30016EDE8 /* Build configuration list for PBXNativeTarget "ChifforobeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D58920271D2156C30016EDE8 /* Debug */,
+				D58920281D2156C30016EDE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D5891FFF1D2156C20016EDE8 /* Chifforobe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D58920001D2156C20016EDE8 /* Chifforobe.xcdatamodel */,
+			);
+			currentVersion = D58920001D2156C20016EDE8 /* Chifforobe.xcdatamodel */;
+			path = Chifforobe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D5891FED1D2156C20016EDE8 /* Project object */;
+}
