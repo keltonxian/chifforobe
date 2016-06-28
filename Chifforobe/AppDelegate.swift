@@ -13,6 +13,8 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var photos = [NSManagedObject]()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -105,6 +107,88 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 abort()
             }
         }
+    }
+    
+    
+    
+    func getPhotos() -> [NSManagedObject] {
+        
+        NSLog("3 photo count[%d]", photos.count)
+        return photos
+    }
+    
+    func initPhotos() {
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName:"Photo")
+        
+        //3
+//        var error: NSError?
+        
+        var fetchedResults: [NSManagedObject]?
+        do {
+            fetchedResults =
+            try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+        } catch let error {
+            print("Could not get db response \(error)")
+        }
+        
+//        let fetchedResults =
+//        managedContext.executeFetchRequest(fetchRequest,
+//            error: &error) as [NSManagedObject]?
+        
+        if let results = fetchedResults {
+            photos = results
+            NSLog("4 photo count[%d]", photos.count)
+        } else {
+            print("Could not fetch")
+        }
+    }
+    
+    
+    func addPhotoData(data: NSData) {
+        //1
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let entity =  NSEntityDescription.entityForName("Photo",
+            inManagedObjectContext:
+            managedContext)
+        
+        let photo = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext:managedContext)
+        
+        //3
+        photo.setValue(data, forKey: "data")
+        
+        //4
+        do {
+            try managedContext.save()
+        } catch let error {
+            print("Could not cache the response \(error)")
+        }
+        //5
+        NSLog("1 photo count[%d]", photos.count)
+        photos.append(photo)
+        NSLog("2 photo count[%d]", photos.count)
+    }
+    
+    func getPhotoData(index: Int) -> NSData {
+        //1
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        let managedContext = appDelegate.managedObjectContext
+        
+        let photo = photos[index]
+        
+        let data = photo.valueForKey("data") as! NSData
+        
+        return data
     }
 
 }

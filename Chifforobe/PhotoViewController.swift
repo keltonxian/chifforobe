@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NSFileManagerDelegate {
 
@@ -36,19 +37,23 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let compressedJPGImage = UIImage(data: imageData!)
         UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
         
-        let fileManager = NSFileManager.defaultManager()
-        fileManager.delegate = self
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.addPhotoData(imageData!)
         
-        let listURL = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as [NSURL]
-        let documentURL = listURL[0]
-        let imageURL = documentURL.URLByAppendingPathComponent("tempImage1.jpg")
+//        let fileManager = NSFileManager.defaultManager()
+//        fileManager.delegate = self
+//        
+//        let listURL = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as [NSURL]
+//        let documentURL = listURL[0]
+//        let imageURL = documentURL.URLByAppendingPathComponent("tempImage1.jpg")
+//        
+//        let isSuccess = imageData?.writeToURL(imageURL, atomically: true)
+//        
+//        let msg = true == isSuccess ? "Save local success" : "Save local fail"
+//        let alert = UIAlertController(title: "Tip", message:msg, preferredStyle: .Alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
+//        self.presentViewController(alert, animated: true){}
         
-        let isSuccess = imageData?.writeToURL(imageURL, atomically: true)
-        
-        let msg = true == isSuccess ? "Save local success" : "Save local fail"
-        let alert = UIAlertController(title: "Tip", message:msg, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-        self.presentViewController(alert, animated: true){}
         
 //        let documents = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
 //        let writePath = documents.stringByAppendingPathComponent("file.plist")
@@ -100,19 +105,37 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let fileManager = NSFileManager.defaultManager()
-        fileManager.delegate = self
-        
-        let listURL = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as [NSURL]
-        let documentURL = listURL[0]
-        let imageURL = documentURL.URLByAppendingPathComponent("tempImage1.jpg")
-        
-        if (fileManager.fileExistsAtPath(imageURL.path!)) {
-            dispatch_async(dispatch_get_main_queue()) {
-                let image = UIImage(contentsOfFile: imageURL.path!)
-                self.setImageToView(self.photoView, image: image!)
-            }
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        let photos = appDelegate.getPhotos()
+        if (photos.count > 0) {
+            let photo = appDelegate.getPhotos()[0]
+            let data = photo.valueForKey("data") as! NSData?
+            let image = UIImage(data: data!)
+            self.setImageToView(self.photoView, image: image!)
         }
+        
+//        let imageData: = appDelegate.getPhotoData(0)
+//        if (nil != imageData) {
+//            
+//            let image = UIImage(data: imageData)
+//            self.setImageToView(self.photoView, image: image!)
+//        }
+        
+        
+//        let fileManager = NSFileManager.defaultManager()
+//        fileManager.delegate = self
+//        
+//        let listURL = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as [NSURL]
+//        let documentURL = listURL[0]
+//        let imageURL = documentURL.URLByAppendingPathComponent("tempImage1.jpg")
+//        
+//        if (fileManager.fileExistsAtPath(imageURL.path!)) {
+//            dispatch_async(dispatch_get_main_queue()) {
+//                let image = UIImage(contentsOfFile: imageURL.path!)
+//                self.setImageToView(self.photoView, image: image!)
+//            }
+//        }
         
 //
 //        let contents = fileManager.contentsOfDirectoryAtURL(imageURL, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions())
