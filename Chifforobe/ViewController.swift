@@ -100,13 +100,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        let fileManager = NSFileManager.defaultManager()
-//        fileManager.delegate = self
-//        
-//        let listURL = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as [NSURL]
-//        let documentURL = listURL[0]
-//        let imageURL = documentURL.URLByAppendingPathComponent("tempImage.jpg")
-//        
+        let fileManager = NSFileManager.defaultManager()
+        fileManager.delegate = self
+        
+        let listURL = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as [NSURL]
+        let documentURL = listURL[0]
+        let imageURL = documentURL.URLByAppendingPathComponent("tempImage.jpg")
+        
+        if (fileManager.fileExistsAtPath(imageURL.path!)) {
+            dispatch_async(dispatch_get_main_queue()) {
+                let image = UIImage(contentsOfFile: imageURL.path!)
+                self.setImageToView(self.photoView, image: image!)
+            }
+        }
+        
+//
 //        let contents = fileManager.contentsOfDirectoryAtURL(imageURL, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions())
     }
 
