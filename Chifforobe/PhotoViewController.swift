@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NSFileManagerDelegate {
+class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NSFileManagerDelegate {
 
     @IBOutlet weak var btnTakePhoto: UIButton!
     @IBOutlet weak var btnPickPhoto: UIButton!
@@ -41,7 +41,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let listURL = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as [NSURL]
         let documentURL = listURL[0]
-        let imageURL = documentURL.URLByAppendingPathComponent("tempImage.jpg")
+        let imageURL = documentURL.URLByAppendingPathComponent("tempImage1.jpg")
         
         let isSuccess = imageData?.writeToURL(imageURL, atomically: true)
         
@@ -105,7 +105,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let listURL = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as [NSURL]
         let documentURL = listURL[0]
-        let imageURL = documentURL.URLByAppendingPathComponent("tempImage.jpg")
+        let imageURL = documentURL.URLByAppendingPathComponent("tempImage1.jpg")
         
         if (fileManager.fileExistsAtPath(imageURL.path!)) {
             dispatch_async(dispatch_get_main_queue()) {

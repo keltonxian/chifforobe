@@ -1,15 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1Z8-6A-yOZ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Chifforobe-->
+        <scene sceneID="gN9-LG-0rY">
+            <objects>
+                <viewController id="1qI-pK-JNn" customClass="MainViewController" customModule="Chifforobe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JOu-7E-9cZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="awW-ac-z9J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="97w-o4-Uet">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26u-b6-eXY">
+                                <rect key="frame" x="20" y="151" width="560" height="99"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Get Photo"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="d7k-Yy-UPK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfB-II-T02">
+                                <rect key="frame" x="20" y="387" width="560" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Photo List"/>
+                                <connections>
+                                    <segue destination="WKq-Xu-8C4" kind="show" id="Kth-12-K5n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="26u-b6-eXY" firstAttribute="top" secondItem="JOu-7E-9cZ" secondAttribute="bottom" constant="87" id="3YN-HN-Z1N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CfB-II-T02" secondAttribute="trailing" id="fpb-Yy-MlQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="26u-b6-eXY" secondAttribute="trailing" id="k2S-Y5-ydu"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="CfB-II-T02" secondAttribute="leading" id="kAu-SK-2va"/>
+                            <constraint firstItem="awW-ac-z9J" firstAttribute="top" secondItem="CfB-II-T02" secondAttribute="bottom" constant="113" id="skY-vK-SkT"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="26u-b6-eXY" secondAttribute="leading" id="v1P-EN-t4K"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chifforobe" id="ax3-Ht-tB1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PAe-wt-igV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704" y="-1163"/>
+        </scene>
+        <!--Get Photo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Chifforobe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PhotoViewController" customModule="Chifforobe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -66,6 +111,7 @@
                             <constraint firstItem="Akm-B3-bEG" firstAttribute="top" secondItem="kbQ-e2-eRI" secondAttribute="bottom" constant="8" id="zYz-dA-JbD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Get Photo" id="Vpt-Nk-XEa"/>
                     <connections>
                         <outlet property="btnPickPhoto" destination="SCJ-cb-2fb" id="P2v-f3-O9x"/>
                         <outlet property="btnSaveAlbum" destination="eFZ-mk-AA9" id="Iuh-UV-7sC"/>
@@ -76,7 +122,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="249" y="149"/>
+            <point key="canvasLocation" x="-104" y="-343"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="7iI-Pl-WcV">
+            <objects>
+                <tableViewController id="WKq-Xu-8C4" customClass="TableViewController" customModule="Chifforobe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cdg-DT-nLl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IHy-Fq-doq">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IHy-Fq-doq" id="n5n-vc-H9A">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WKq-Xu-8C4" id="Xkt-d1-gYu"/>
+                            <outlet property="delegate" destination="WKq-Xu-8C4" id="75Q-cT-qrH"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGY-oF-D1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704" y="-343"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Bd2-1H-2GA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Z8-6A-yOZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TkF-0h-mBq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1qI-pK-JNn" kind="relationship" relationship="rootViewController" id="rML-gH-i88"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7G-Dv-aTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-104" y="-1163"/>
         </scene>
     </scenes>
 </document>

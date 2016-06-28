@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D54677C01D2215E70016027E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54677BF1D2215E70016027E /* MainViewController.swift */; };
+		D54677C21D22164B0016027E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54677C11D22164B0016027E /* TableViewController.swift */; };
 		D5891FF91D2156C20016EDE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5891FF81D2156C20016EDE8 /* AppDelegate.swift */; };
-		D5891FFB1D2156C20016EDE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5891FFA1D2156C20016EDE8 /* ViewController.swift */; };
+		D5891FFB1D2156C20016EDE8 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5891FFA1D2156C20016EDE8 /* PhotoViewController.swift */; };
 		D5891FFE1D2156C20016EDE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5891FFC1D2156C20016EDE8 /* Main.storyboard */; };
 		D58920011D2156C20016EDE8 /* Chifforobe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5891FFF1D2156C20016EDE8 /* Chifforobe.xcdatamodeld */; };
 		D58920031D2156C20016EDE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58920021D2156C20016EDE8 /* Assets.xcassets */; };
@@ -35,9 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D54677BF1D2215E70016027E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D54677C11D22164B0016027E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		D5891FF51D2156C20016EDE8 /* Chifforobe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chifforobe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5891FF81D2156C20016EDE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D5891FFA1D2156C20016EDE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D5891FFA1D2156C20016EDE8 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		D5891FFD1D2156C20016EDE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D58920001D2156C20016EDE8 /* Chifforobe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chifforobe.xcdatamodel; sourceTree = "<group>"; };
 		D58920021D2156C20016EDE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,12 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				D5891FF81D2156C20016EDE8 /* AppDelegate.swift */,
-				D5891FFA1D2156C20016EDE8 /* ViewController.swift */,
+				D5891FFA1D2156C20016EDE8 /* PhotoViewController.swift */,
 				D5891FFC1D2156C20016EDE8 /* Main.storyboard */,
 				D58920021D2156C20016EDE8 /* Assets.xcassets */,
 				D58920041D2156C20016EDE8 /* LaunchScreen.storyboard */,
 				D58920071D2156C20016EDE8 /* Info.plist */,
 				D5891FFF1D2156C20016EDE8 /* Chifforobe.xcdatamodeld */,
+				D54677BF1D2215E70016027E /* MainViewController.swift */,
+				D54677C11D22164B0016027E /* TableViewController.swift */,
 			);
 			path = Chifforobe;
 			sourceTree = "<group>";
@@ -259,9 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5891FFB1D2156C20016EDE8 /* ViewController.swift in Sources */,
+				D5891FFB1D2156C20016EDE8 /* PhotoViewController.swift in Sources */,
 				D5891FF91D2156C20016EDE8 /* AppDelegate.swift in Sources */,
 				D58920011D2156C20016EDE8 /* Chifforobe.xcdatamodeld in Sources */,
+				D54677C21D22164B0016027E /* TableViewController.swift in Sources */,
+				D54677C01D2215E70016027E /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
