@@ -112,7 +112,36 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             let photo = appDelegate.getPhotos()[0]
             let data = photo.valueForKey("data") as! NSData?
             let image = UIImage(data: data!)
-            self.setImageToView(self.photoView, image: image!)
+//            self.setImageToView(self.photoView, image: image!)
+            
+            // Displaying original image.
+            var originalImageView:UIImageView = UIImageView(frame: CGRectMake(20, 20, image!.size.width, image!.size.height))
+            originalImageView.image = image
+            originalImageView.frame = CGRectMake(0, 240, 60, 60)
+            self.view.addSubview(originalImageView)
+            
+            // GrayScaled image.
+            var imageView:UIImageView = UIImageView(frame: CGRectMake(20, CGRectGetMaxY(originalImageView.frame) + 10, image!.size.width, image!.size.height))
+            
+            imageView.image = image!.getGrayScale()
+            imageView.frame = CGRectMake(60, 180, 60, 60)
+            self.view.addSubview(imageView)
+            
+            // Modify image colors.
+            var modifiedImageView:UIImageView = UIImageView(frame: CGRectMake(20, CGRectGetMaxY(imageView.frame) + 10, image!.size.width, image!.size.height))
+            modifiedImageView.image = image!.applyOnPixels({ (point, redColor, greenColor, blueColor, alphaValue) -> (newRedColor: UInt8, newgreenColor: UInt8, newblueColor: UInt8, newalphaValue: UInt8) in
+                
+                let avg = (UInt32(redColor) + UInt32(greenColor) + UInt32(blueColor))/3
+                if (Double(UInt32(redColor)) > (Double(avg) * 1.8)) {
+                    return (0,0,200,255)
+                }
+                else {
+                    return (redColor,greenColor,blueColor,alphaValue)
+                }
+                
+            })
+            modifiedImageView.frame = CGRectMake(120, 120, 60, 60)
+            self.view.addSubview(modifiedImageView)
         }
         
 //        let imageData: = appDelegate.getPhotoData(0)
