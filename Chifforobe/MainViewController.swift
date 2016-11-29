@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.ptions: NSDirectoryEnumerationOptions())
         
         let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
+        UIApplication.shared.delegate as! AppDelegate
         appDelegate.initPhotos()
     }
     

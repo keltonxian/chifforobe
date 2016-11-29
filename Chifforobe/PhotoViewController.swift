@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NSFileManagerDelegate {
+class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileManagerDelegate {
 
     @IBOutlet weak var btnTakePhoto: UIButton!
     @IBOutlet weak var btnPickPhoto: UIButton!
@@ -18,26 +18,26 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var photoView: UIImageView!
     
     
-    @IBAction func actionTakePhoto(sender: UIButton) {
+    @IBAction func actionTakePhoto(_ sender: UIButton) {
         let picker = UIImagePickerController()
         picker.delegate = self
-        picker.sourceType = .Camera
-        presentViewController(picker, animated: true, completion: nil)
+        picker.sourceType = .camera
+        present(picker, animated: true, completion: nil)
     }
     
-    @IBAction func actionPickPhoto(sender: UIButton) {
+    @IBAction func actionPickPhoto(_ sender: UIButton) {
         let picker = UIImagePickerController()
         picker.delegate = self
-        picker.sourceType = .PhotoLibrary
-        presentViewController(picker, animated: true, completion: nil)
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true, completion: nil)
     }
     
-    @IBAction func actionSaveLocal(sender: UIButton) {
+    @IBAction func actionSaveLocal(_ sender: UIButton) {
         let imageData = UIImageJPEGRepresentation(photoView.image!, 0.6)
         let compressedJPGImage = UIImage(data: imageData!)
         UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.addPhotoData(imageData!)
         
 //        let fileManager = NSFileManager.defaultManager()
@@ -72,7 +72,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
 //        imageData?.writeToFile("", atomically: true)
     }
     
-    @IBAction func actionSaveAlbum(sender: UIButton) {
+    @IBAction func actionSaveAlbum(_ sender: UIButton) {
         let imageData = UIImageJPEGRepresentation(photoView.image!, 0.6)
         let compressedJPGImage = UIImage(data: imageData!)
         UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
@@ -82,23 +82,23 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
 //            delegate: nil,
 //            cancelButtonTitle: "Ok")
 //        alert.show()
-        let alert = UIAlertController(title: "Tip", message:"Your image has been saved to Photo Library!", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-        self.presentViewController(alert, animated: true){}
+        let alert = UIAlertController(title: "Tip", message:"Your image has been saved to Photo Library!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in })
+        self.present(alert, animated: true){}
         
 //        let rootVC = UIApplication.sharedApplication().keyWindow?.rootViewController
 //        rootVC?.presentViewController(alert, animated: true){}
     }
     
-    func setImageToView(imageView: UIImageView, image: UIImage) {
+    func setImageToView(_ imageView: UIImageView, image: UIImage) {
         imageView.image = image
 //        toImageView.frame = CGRectMake(toImageView.frame.origin.x, toImageView.frame.origin.y, img.size.width, img.size.height)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image: UIImage = (info[UIImagePickerControllerOriginalImage] as? UIImage)!
         setImageToView(photoView, image: image)
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -106,29 +106,29 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         // Do any additional setup after loading the view, typically from a nib.
         
         let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
+        UIApplication.shared.delegate as! AppDelegate
         let photos = appDelegate.getPhotos()
         if (photos.count > 0) {
             let photo = appDelegate.getPhotos()[0]
-            let data = photo.valueForKey("data") as! NSData?
+            let data = photo.value(forKey: "data") as! Data?
             let image = UIImage(data: data!)
 //            self.setImageToView(self.photoView, image: image!)
             
             // Displaying original image.
-            var originalImageView:UIImageView = UIImageView(frame: CGRectMake(20, 20, image!.size.width, image!.size.height))
+            let originalImageView:UIImageView = UIImageView(frame: CGRect(x: 20, y: 20, width: image!.size.width, height: image!.size.height))
             originalImageView.image = image
-            originalImageView.frame = CGRectMake(0, 240, 60, 60)
+            originalImageView.frame = CGRect(x: 0, y: 240, width: 60, height: 60)
             self.view.addSubview(originalImageView)
             
             // GrayScaled image.
-            var imageView:UIImageView = UIImageView(frame: CGRectMake(20, CGRectGetMaxY(originalImageView.frame) + 10, image!.size.width, image!.size.height))
+            let imageView:UIImageView = UIImageView(frame: CGRect(x: 20, y: originalImageView.frame.maxY + 10, width: image!.size.width, height: image!.size.height))
             
             imageView.image = image!.getGrayScale()
-            imageView.frame = CGRectMake(60, 180, 60, 60)
+            imageView.frame = CGRect(x: 60, y: 180, width: 60, height: 60)
             self.view.addSubview(imageView)
             
             // Modify image colors.
-            var modifiedImageView:UIImageView = UIImageView(frame: CGRectMake(20, CGRectGetMaxY(imageView.frame) + 10, image!.size.width, image!.size.height))
+            let modifiedImageView:UIImageView = UIImageView(frame: CGRect(x: 20, y: imageView.frame.maxY + 10, width: image!.size.width, height: image!.size.height))
             modifiedImageView.image = image!.applyOnPixels({ (point, redColor, greenColor, blueColor, alphaValue) -> (newRedColor: UInt8, newgreenColor: UInt8, newblueColor: UInt8, newalphaValue: UInt8) in
                 
                 let avg = (UInt32(redColor) + UInt32(greenColor) + UInt32(blueColor))/3
@@ -140,7 +140,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
                 }
                 
             })
-            modifiedImageView.frame = CGRectMake(120, 120, 60, 60)
+            modifiedImageView.frame = CGRect(x: 120, y: 120, width: 60, height: 60)
             self.view.addSubview(modifiedImageView)
         }
         

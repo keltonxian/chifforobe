@@ -11,29 +11,29 @@ import CoreData
 
 class TableViewController: UITableViewController {
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
+        UIApplication.shared.delegate as! AppDelegate
         return appDelegate.getPhotos().count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
+        UIApplication.shared.delegate as! AppDelegate
         let photo = appDelegate.getPhotos()[indexPath.row]
 //        cell!.textLabel!.text = photo.valueForKey("path") as! String?
-        let data = photo.valueForKey("data") as! NSData
+        let data = photo.value(forKey: "data") as! Data
         let image = UIImage(data: data)
         let imageView = UIImageView(image: image)
-        imageView.contentMode = UIViewContentMode.ScaleAspectFit
-        imageView.frame = CGRectMake(0, 0, 30, 30)
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
 //        imageView
         cell?.addSubview(imageView)
         return cell!
     }
     
-    func addPath(path: String) {
+    func addPath(_ path: String) {
 //        //1
 //        let appDelegate =
 //        UIApplication.sharedApplication().delegate as! AppDelegate
@@ -65,7 +65,7 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         title = "\"Photo List\""
-        tableView.registerClass(UITableViewCell.self,
+        tableView.register(UITableViewCell.self,
             forCellReuseIdentifier: "Cell")
 //        let fileManager = NSFileManager.defaultManager()
 //        let listURL = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as [NSURL]
